@@ -58,4 +58,10 @@ ensure the following
 Physics: 2D position (x, y), velocity, gravity pulling y down, optional drag force opposing velocity. Semi-implicit Euler.
 The analytic prediction: compute the drag-free parabola + landing range from a formula, draw as dotted curve.
 On launch: simulate actual flight (with drag if enabled), mark landing point, compare predicted vs actual range.
-Params/schema: launch angle, initial speed, gravity, drag coefficient (the brief's four).
+Params/schema: launch angle, initial speed, gravity, drag coefficient (the brief's four).|
+
+
+
+- what I wrote/edited by hand
+
+1- Deleted the Throwaway Experiment and removed its physics test and registry entry.

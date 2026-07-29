@@ -5,7 +5,7 @@ import { Experiment } from './Experiment.js';
 describe('registry - shape', () => {
   it('exports EXPERIMENTS as an array (one throwaway placeholder + Pendulum + Projectile + Spring)', () => {
     expect(Array.isArray(EXPERIMENTS)).toBe(true);
-    expect(EXPERIMENTS.length).toBe(4);
+    expect(EXPERIMENTS.length).toBe(3);
   });
 
   it('freezes EXPERIMENTS so nothing can push/splice it at runtime', () => {

@@ -1,4 +1,3 @@
-import { FallingBall } from './experiments/FallingBall.js';
 import { Pendulum } from './experiments/Pendulum.js';
 import { Projectile } from './experiments/Projectile.js';
 import { Spring } from './experiments/Spring.js';
@@ -44,7 +43,6 @@ export const EXPERIMENTS = Object.freeze([
   // THROWAWAY: proves the framework (Experiment contract, registry, simLoop,
   // UIPanel, Graph) works end-to-end. Safe to delete now that a real
   // experiment (Pendulum) exists.
-  { key: 'falling-ball', label: 'Falling Ball (throwaway)', ExperimentClass: FallingBall },
   { key: 'pendulum', label: 'Pendulum', ExperimentClass: Pendulum },
   { key: 'projectile', label: 'Projectile', ExperimentClass: Projectile },
   { key: 'spring', label: 'Spring', ExperimentClass: Spring },
