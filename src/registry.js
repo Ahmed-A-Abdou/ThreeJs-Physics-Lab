@@ -1,4 +1,5 @@
 import { FallingBall } from './experiments/FallingBall.js';
+import { Pendulum } from './experiments/Pendulum.js';
 
 /**
  * @typedef {Object} ExperimentRegistryEntry
@@ -27,14 +28,10 @@ import { FallingBall } from './experiments/FallingBall.js';
  * and one line here. No other framework file (simLoop, UIPanel, Graph,
  * main, Experiment) should ever need to change to support it.
  *
- * Currently holds one throwaway placeholder (see below) proving the whole
- * chain works end-to-end. Once a real experiment exists (e.g.
- * src/experiments/Pendulum.js, extending Experiment, backed by physics in
- * src/physics/pendulum.js), registering it is exactly two lines:
+ * Registering a new experiment is exactly two lines:
  *
- *   1. import { Pendulum } from './experiments/Pendulum.js';
- *   2. add { key: 'pendulum', label: 'Pendulum', ExperimentClass: Pendulum }
- *      to the array below.
+ *   1. import { Name } from './experiments/Name.js';
+ *   2. add { key: 'name', label: 'Name', ExperimentClass: Name } to the array below.
  *
  * Frozen so nothing downstream can push/splice this list at runtime - the
  * only way to add an experiment is to edit this source file.
@@ -43,9 +40,10 @@ import { FallingBall } from './experiments/FallingBall.js';
  */
 export const EXPERIMENTS = Object.freeze([
   // THROWAWAY: proves the framework (Experiment contract, registry, simLoop,
-  // UIPanel, Graph) works end-to-end. Safe to delete once a real experiment
-  // (pendulum/projectile/spring) exists.
+  // UIPanel, Graph) works end-to-end. Safe to delete now that a real
+  // experiment (Pendulum) exists.
   { key: 'falling-ball', label: 'Falling Ball (throwaway)', ExperimentClass: FallingBall },
+  { key: 'pendulum', label: 'Pendulum', ExperimentClass: Pendulum },
 ]);
 
 /**

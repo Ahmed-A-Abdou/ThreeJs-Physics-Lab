@@ -3,9 +3,9 @@ import { EXPERIMENTS, getExperiment } from './registry.js';
 import { Experiment } from './Experiment.js';
 
 describe('registry - shape', () => {
-  it('exports EXPERIMENTS as an array (currently one throwaway placeholder entry)', () => {
+  it('exports EXPERIMENTS as an array (one throwaway placeholder + Pendulum)', () => {
     expect(Array.isArray(EXPERIMENTS)).toBe(true);
-    expect(EXPERIMENTS.length).toBe(1);
+    expect(EXPERIMENTS.length).toBe(2);
   });
 
   it('freezes EXPERIMENTS so nothing can push/splice it at runtime', () => {
@@ -18,8 +18,14 @@ describe('registry - shape', () => {
 
 describe('registry - getExperiment()', () => {
   it('returns undefined for an unknown key, rather than throwing', () => {
-    expect(getExperiment('pendulum')).toBeUndefined();
+    expect(getExperiment('spring')).toBeUndefined();
     expect(getExperiment('')).toBeUndefined();
+  });
+
+  it('resolves the pendulum entry by key', () => {
+    const entry = getExperiment('pendulum');
+    expect(entry).not.toBeUndefined();
+    expect(entry.label).toBe('Pendulum');
   });
 });
 
