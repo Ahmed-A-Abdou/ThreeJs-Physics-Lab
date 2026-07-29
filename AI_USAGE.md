@@ -1,3 +1,15 @@
+- Tools and Models
+    Sonnet 5 with claude code (high effort)
+    Planning and Architecting With Opus 4.8 (high effort)
+
+
+-what did you set up before writing any code, and
+why?
+
+- i started planning with opus 4.8 and achitecting in my notebook and once i understood the full process along with the actual experimental formulas, then i moved to implementing the project.
+
+why? 
+- because this i what i do when i get assigned to something new, even if its a gameplay system in unity (which is my current tech stack), i like to plan it thoroughly beforehand, by asking a friend who made something similar or planing it with ai by using descriptive and clear prompts, and  i make sure that i understand everything ranging from the whole architecture to the interactions between each subsystem or script (as much as possible ofcourse without taking too much time). then i start implementing the actual task.
 
 - Representative prompts
 

@@ -13,5 +13,8 @@
     "happy-dom": "^20.11.1",
     "vite": "^8.1.1",
     "vitest": "^4.1.10"
+  },
+  "dependencies": {
+    "three": "^0.185.1"
   }
 }

@@ -1,3 +1,5 @@
+import { FallingBall } from './experiments/FallingBall.js';
+
 /**
  * @typedef {Object} ExperimentRegistryEntry
  * @property {string} key
@@ -25,10 +27,10 @@
  * and one line here. No other framework file (simLoop, UIPanel, Graph,
  * main, Experiment) should ever need to change to support it.
  *
- * Empty for now - no concrete Experiment subclass exists yet in this repo.
- * Once one does (e.g. src/experiments/Pendulum.js, extending Experiment,
- * backed by physics in src/physics/pendulum.js), registering it is exactly
- * two lines:
+ * Currently holds one throwaway placeholder (see below) proving the whole
+ * chain works end-to-end. Once a real experiment exists (e.g.
+ * src/experiments/Pendulum.js, extending Experiment, backed by physics in
+ * src/physics/pendulum.js), registering it is exactly two lines:
  *
  *   1. import { Pendulum } from './experiments/Pendulum.js';
  *   2. add { key: 'pendulum', label: 'Pendulum', ExperimentClass: Pendulum }
@@ -39,7 +41,12 @@
  *
  * @type {ExperimentRegistryEntry[]}
  */
-export const EXPERIMENTS = Object.freeze([]);
+export const EXPERIMENTS = Object.freeze([
+  // THROWAWAY: proves the framework (Experiment contract, registry, simLoop,
+  // UIPanel, Graph) works end-to-end. Safe to delete once a real experiment
+  // (pendulum/projectile/spring) exists.
+  { key: 'falling-ball', label: 'Falling Ball (throwaway)', ExperimentClass: FallingBall },
+]);
 
 /**
  * Look up one experiment's registry entry by its key.

@@ -3,9 +3,9 @@ import { EXPERIMENTS, getExperiment } from './registry.js';
 import { Experiment } from './Experiment.js';
 
 describe('registry - shape', () => {
-  it('exports EXPERIMENTS as an array (empty for now - no experiments built yet)', () => {
+  it('exports EXPERIMENTS as an array (currently one throwaway placeholder entry)', () => {
     expect(Array.isArray(EXPERIMENTS)).toBe(true);
-    expect(EXPERIMENTS).toEqual([]);
+    expect(EXPERIMENTS.length).toBe(1);
   });
 
   it('freezes EXPERIMENTS so nothing can push/splice it at runtime', () => {
@@ -23,10 +23,7 @@ describe('registry - getExperiment()', () => {
   });
 });
 
-describe('registry - entry contract (forward-looking)', () => {
-  // EXPERIMENTS is empty right now, so this loop body doesn't run yet - it
-  // exists so that the moment a real entry is added, this test starts
-  // enforcing its shape without anyone having to remember to write it then.
+describe('registry - entry contract', () => {
   it('every registered entry has a string key/label and an Experiment subclass', () => {
     for (const entry of EXPERIMENTS) {
       expect(typeof entry.key).toBe('string');
