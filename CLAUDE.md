@@ -45,5 +45,10 @@ AI-extensibility.
   what.
 
 ## Rules added during the build
-(Add rules here as we discover the AI repeatedly getting something wrong.
-This section must grow as the project progresses.)
+
+- registry.test.js must NOT hardcode the experiment count (e.g.
+  `expect(EXPERIMENTS.length).toBe(3)`). Every time an experiment was added
+  or removed, this assertion went stale and had to be manually bumped.
+  Derive expectations from the registry itself, or assert on specific
+  entries by key, so the test survives adding/removing experiments without
+  a manual edit.
