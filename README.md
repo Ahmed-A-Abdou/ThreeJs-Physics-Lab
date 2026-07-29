@@ -20,6 +20,40 @@ By implementing the Experiment.js contract, the framework (sim loop, UI panel, g
 
 Because no framework file references any specific experiment, a new experiment — including one added later by an AI agent working only from this repository — drops in without modifying any framework file.
 
+## Architecture Diagram
+
+```mermaid
+graph TD
+    main["main.js — app shell / brain"]
+    registry["registry.js"]
+    simLoop["simLoop.js — accumulator"]
+    UIPanel["UIPanel.js — schema to sliders"]
+    Graph["Graph.js — plot + CSV"]
+    interface["Experiment.js — interface / contract"]
+
+    main --> registry
+    main --> simLoop
+    main --> UIPanel
+    main --> Graph
+
+    simLoop --> interface
+    UIPanel --> interface
+    Graph --> interface
+
+    interface --> pendulum["Pendulum + pendulumPhysics"]
+    interface --> projectile["Projectile + projectilePhysics"]
+    interface --> spring["Spring + springPhysics"]
+
+    subgraph framework["Framework (generic — names no experiment)"]
+        main
+        registry
+        simLoop
+        UIPanel
+        Graph
+        interface
+    end
+```
+
 **Adding an experiment — 3 total changes:**
 1. Add an experiment file
 2. Add the experiment's physics file
