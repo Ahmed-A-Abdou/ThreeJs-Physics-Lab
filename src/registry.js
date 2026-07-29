@@ -1,5 +1,6 @@
 import { FallingBall } from './experiments/FallingBall.js';
 import { Pendulum } from './experiments/Pendulum.js';
+import { Projectile } from './experiments/Projectile.js';
 
 /**
  * @typedef {Object} ExperimentRegistryEntry
@@ -44,6 +45,7 @@ export const EXPERIMENTS = Object.freeze([
   // experiment (Pendulum) exists.
   { key: 'falling-ball', label: 'Falling Ball (throwaway)', ExperimentClass: FallingBall },
   { key: 'pendulum', label: 'Pendulum', ExperimentClass: Pendulum },
+  { key: 'projectile', label: 'Projectile', ExperimentClass: Projectile },
 ]);
 
 /**
