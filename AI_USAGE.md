@@ -28,3 +28,13 @@ This file will contain a list of all available experiments.
 The "Framework" will use this file to answer one question: What can i run ? 
 This means that any new experiment must be added to this list.
 This Class MUST not contain any experiment Logic.
+
+3- Create Graph.js 
+it will read the getMeasurement() and plot time/value points on a 2d canvas overlay 
+and exports csv
+it must read the labeled structure from getMeasurements() ({label, points: [{t,value}]})
+it will plot whatever quantity its handed and uses label for the axis 
+it pllots value vs a time as a line 
+csv export button dumps the recorded points to a file 
+no experiment- specific logic, it must work with any measurement it receives 
+the graph can plot data every frame and it can plot the full history of the whole experiment
