@@ -20,3 +20,11 @@ dispose() — frees this experiment's geometries and materials and removes its m
 Parameter schema:
 
 Each experiment also exposes a parameter schema: a list of entries, one per adjustable parameter, every entry having the same six fields — key, label, min, max, step, default. The framework's UI panel reads this schema to auto-generate sliders. No experiment builds its own UI.
+
+
+
+2- I want you to create the registry.js.
+This file will contain a list of all available experiments.
+The "Framework" will use this file to answer one question: What can i run ? 
+This means that any new experiment must be added to this list.
+This Class MUST not contain any experiment Logic.
