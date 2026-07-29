@@ -50,3 +50,12 @@ it pllots value vs a time as a line
 csv export button dumps the recorded points to a file 
 no experiment- specific logic, it must work with any measurement it receives 
 the graph can plot data every frame and it can plot the full history of the whole experiment
+
+
+4- now create the projectile.js 
+same as the other experiment structures
+ensure the following 
+Physics: 2D position (x, y), velocity, gravity pulling y down, optional drag force opposing velocity. Semi-implicit Euler.
+The analytic prediction: compute the drag-free parabola + landing range from a formula, draw as dotted curve.
+On launch: simulate actual flight (with drag if enabled), mark landing point, compare predicted vs actual range.
+Params/schema: launch angle, initial speed, gravity, drag coefficient (the brief's four).
