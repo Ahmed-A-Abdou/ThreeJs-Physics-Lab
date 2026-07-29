@@ -65,3 +65,15 @@ Params/schema: launch angle, initial speed, gravity, drag coefficient (the brief
 - what I wrote/edited by hand
 
 1- Deleted the Throwaway Experiment and removed its physics test and registry entry.
+
+## Two concrete cases where the AI output was wrong or suboptimal
+
+**Case 1 — hardcoded experiment count in the registry test.**
+The AI wrote registry.test.js with a hardcoded count assertion
+(e.g. expect(EXPERIMENTS.length).toBe(3)). I added a rule to
+CLAUDE.md to enforce this.
+
+**Case 2 — a class where a plain frozen array was correct.**
+My own prompt asked for the registry to be a "Class." That was suboptimal.
+there is nothing that will implemented from the registry, so writing class was wrong on my part.
+yet i took notice of this and reviewed the implementation to ensure it was correct
